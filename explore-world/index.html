@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore World — Jelajahi Tempat-Tempat Misterius & Memukau di Bumi</title>
+  <meta name="description" content="Referensi perjalanan ke tempat-tempat paling memukau dan misterius di dunia, terinspirasi dari Atlas Obscura."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#" class="brand">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg>
+        <span>Explore&nbsp;<em>World</em></span>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#destinasi">Destinasi</a>
+        <a href="#kategori">Kategori</a>
+        <a href="#cerita">Cerita</a>
+        <a href="#newsletter">Buletin</a>
+        <a href="#" class="btn btn-sm">Mulai Menjelajah</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Buka menu">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <p class="eyebrow">✦ Terinspirasi dari spirit Atlas Obscura</p>
+      <h1>Kamus keajaiban dunia yang <span class="highlight">tak biasa</span>, misterius, & menakjubkan</h1>
+      <p class="sub">Dari kota batu yang hilang hingga hutan yang bernyanyi — temukan ribuan destinasi aneh dan indah di seluruh planet, dikurasi oleh para penjelajah.</p>
+      <form class="search-bar" id="searchForm">
+        <input type="text" id="searchInput" placeholder="Cari tempat, negara, atau keajaiban…" />
+        <button type="submit" class="btn">Jelajahi</button>
+      </form>
+      <div class="hero-tags">
+        <span>Populer:</span>
+        <button class="tag" data-query="Socotra">Pulau Socotra</button>
+        <button class="tag" data-query="Antartika">Antartika</button>
+        <button class="tag" data-query="Borobudur">Borobudur</button>
+        <button class="tag" data-query="Kapadokia">Kapadokia</button>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=1400&q=70" alt="" loading="eager"/>
+      <div class="hero-overlay"></div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="container stats-grid">
+      <div><strong>17,000+</strong><span>Tempat terkurasi</span></div>
+      <div><strong>265</strong><span>Negara & wilayah</span></div>
+      <div><strong>1.2M</strong><span>Penjelajah komunitas</span></div>
+      <div><strong>98</strong><span>Cerita minggu ini</span></div>
+    </div>
+  </section>
+
+  <!-- KATEGORI -->
+  <section class="section" id="kategori">
+    <div class="container">
+      <div class="section-head">
+        <h2>Jelajahi berdasarkan kategori</h2>
+        <p>Setiap sudut bumi punya cerita anehnya sendiri.</p>
+      </div>
+      <div class="cat-grid">
+        <a href="#" class="cat-card" style="--tint:#8b5e3c"><span class="cat-icon">🏜️</span><h3>Lanskap Aneh</h3><p>Formasi batu & gurun mustahil</p></a>
+        <a href="#" class="cat-card" style="--tint:#2f6f5e"><span class="cat-icon">🏚️</span><h3>Reruntuhan</h3><p>Kota hilang & kuil terlupakan</p></a>
+        <a href="#" class="cat-card" style="--tint:#4a5aa0"><span class="cat-icon">❄️</span><h3>Ekstrem Kutub</h3><p>Es, salju, & cahaya utara</p></a>
+        <a href="#" class="cat-card" style="--tint:#a04a4a"><span class="cat-icon">🌋</span><h3>Aktivitas Vulkanik</h3><p>Danau lava & mata air panas</p></a>
+        <a href="#" class="cat-card" style="--tint:#6a4aa0"><span class="cat-icon">🔮</span><h3>Misteri & Legenda</h3><p>Tempat penuh mitos lokal</p></a>
+        <a href="#" class="cat-card" style="--tint:#3c7f8b"><span class="cat-icon">🌊</span><h3>Bawah Laut</h3><p>Terumbu & gua tenggelam</p></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESTINASI -->
+  <section class="section alt" id="destinasi">
+    <div class="container">
+      <div class="section-head row">
+        <div>
+          <h2>Destinasi pilihan editor</h2>
+          <p id="resultCount">Menampilkan semua tempat menakjubkan.</p>
+        </div>
+        <div class="filters" id="filterBar">
+          <button class="chip active" data-filter="all">Semua</button>
+          <button class="chip" data-filter="asia">Asia</button>
+          <button class="chip" data-filter="eropa">Eropa</button>
+          <button class="chip" data-filter="afrika">Afrika</button>
+          <button class="chip" data-filter="amerika">Amerika</button>
+          <button class="chip" data-filter="oceania">Oceania</button>
+        </div>
+      </div>
+
+      <div class="grid" id="cardGrid"><!-- diisi JS --></div>
+
+      <div class="empty hidden" id="emptyState">
+        <p>😶 Tidak ada tempat yang cocok. Coba kata kunci lain.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERITA / EDITORIAL -->
+  <section class="section" id="cerita">
+    <div class="container story-grid">
+      <article class="story-main">
+        <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=70" alt="Lembah berkabut"/>
+        <div class="story-body">
+          <p class="eyebrow">Cerita Utama</p>
+          <h3>Di lembah yang kabutnya tak pernah naik: catatan perjalanan ke Highland mistis</h3>
+          <p>Sebuah esai tentang bagaimana angin, legenda, dan batu purba membentuk rasa tempat yang tak bisa dipetakan GPS manapun…</p>
+          <a href="#" class="link-arrow">Baca cerita →</a>
+        </div>
+      </article>
+      <aside class="story-side">
+        <h4>Cerita Terbaru</h4>
+        <a href="#"><span>5 min</span> Pasar malam bawah tanah di Lisbon yang nyaris punah</a>
+        <a href="#"><span>8 min</span> Mengapa pohon naga di Socotra berbentuk payung</a>
+        <a href="#"><span>3 min</span> Menghitung ulang panjang Tembok Besar yang sebenarnya</a>
+        <a href="#"><span>12 min</span> Sepanjang musim dingin bersama pemburu es di Greenland</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter" id="newsletter">
+    <div class="container nl-inner">
+      <h2>Keajaiban dunia mingguan, langsung ke inbox-mu</h2>
+      <p>Satu destinasi misterius + satu cerita pendek, setiap Jumat. Tanpa spam.</p>
+      <form id="nlForm">
+        <input type="email" required placeholder="nama@email.com"/>
+        <button class="btn btn-light" type="submit">Berlangganan</button>
+      </form>
+      <small id="nlMsg"></small>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <h5>Explore World</h5>
+        <p>Peta keingintahuan manusia. Proyek katalog destinasi unik terinspirasi semangat Atlas Obscura.</p>
+      </div>
+      <div><h5>Jelajahi</h5><a href="#">Peta interaktif</a><a href="#">Koleksi editor</a><a href="#">Tempat terdekat</a></div>
+      <div><h5>Komunitas</h5><a href="#">Kontribusi tempat</a><a href="#">Forum penjelajah</a><a href="#">Event jalan-jalan</a></div>
+      <div><h5>Tentang</h5><a href="#">Manifesto</a><a href="#">Tim kurator</a><a href="#">Kontak</a></div>
+    </div>
+    <div class="container copyright">© 2026 Explore World — Dibuat untuk rasa ingin tahu.</div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
